@@ -36,7 +36,11 @@
 
 ## 二、在模型广场找到 Veo 3.1
 
-打开 [价格页](https://tryallapi.com/pricing) / 模型广场，侧栏按供应商 **Google**、类型 **音视频**、标签 **视频 / 异步 / 首尾帧** 筛选。详情卡要点（公开定价接口快照，**截图待补**）：
+打开 [价格页](https://tryallapi.com/pricing) / 模型广场，侧栏按供应商 **Google**、类型 **音视频**、标签 **视频 / 异步 / 首尾帧** 筛选。详情卡截图如下：
+
+![Google Veo 3.1 模型广场详情卡：模型 ID、OpenAI video format 与按次价格](docs/model-square.png)
+
+截图里详情卡要点（与广场文案一致）：
 
 | 字段 | 内容 |
 | --- | --- |
@@ -45,7 +49,7 @@
 | **描述 gist** | 高质量模式；可伴随音频；支持首尾帧控制与文生视频；约 8 秒片段 |
 | **标签** | 异步、视频、首尾帧 |
 | **API（广场 endpoint 类型）** | OpenAI video format → `POST /v1/videos` |
-| **计费** | 按次（`quota_type=1`）；分组 **Discounted-Gemini-2** |
+| **计费** | 按次；分组 **Discounted-Gemini-2**；截图价 **$0.2206 / 次** |
 
 同屏还能看到：`veo_3_1-fast`、`veo_3_1-components`。文中 UI 品牌可能为 momoAPIPro / 模型广场，实际对接以 [TryAllAPI](https://tryallapi.com/) 为准。
 
@@ -67,17 +71,22 @@
 
 ## 四、价格怎么读
 
-按次计费模型在公开接口里用 **`model_price`** 字段（单位与最终展示以广场详情卡为准）。快照如下（**以页面实时为准**）：
+按次计费。截图「分组价格」表复现如下（**以页面实时为准**）：
 
-| 模型 ID | model_price（快照） | 分组 | 分组倍率（快照） |
+| 模型 ID（本卡） | 分组 | 计费类型 | 价格 |
 | --- | --- | --- | --- |
-| **`veo_3_1`** | **0.768** | Discounted-Gemini-2 | 0.28722 |
-| **`veo_3_1-fast`** | **0.576** | Discounted-Gemini-2 | 0.28722 |
-| **`veo_3_1-components`** | **0.768** | Discounted-Gemini-2 | 0.28722 |
+| **`veo_3_1`** | **Discounted-Gemini-2** | 按次计费 | **$0.2206 / 次** |
+
+同屏 / 公开接口另可见相邻档（**非本截图数字，仅 ID 对照；价以各卡详情为准**）：
+
+| 模型 ID | 怎么读 |
+| --- | --- |
+| `veo_3_1-fast` | 同供应商 fast 档；打开其详情卡读实时价 |
+| `veo_3_1-components` | 参考图档；打开其详情卡读实时价 |
 
 读表时注意：
 
-1. 快照来自站点公开定价 JSON，**不是**替你算出的最终账单；控制台可能再乘分组倍率或另有展示价。
+1. 上表 **$0.2206 / 次** 直接来自 `veo_3_1` 详情卡截图，勿与接口原始 `model_price` 字段混用。
 2. 描述写明约 **8 秒** 片段；时长 / 分辨率限额以详情卡为准。
 3. 换分组或活动价后数字会变——下单前再看一眼价格页。
 
@@ -177,7 +186,7 @@ curl -sS -X GET \
 | 注册试用（aff） | [https://tryallapi.com/register?aff=5A6A](https://tryallapi.com/register?aff=5A6A) |
 | 价格页 | [https://tryallapi.com/pricing](https://tryallapi.com/pricing) |
 
-控制台 Token、定价与文档更新后，以线上为准。**截图待补**。
+控制台 Token、定价与文档更新后，以线上为准。详情卡截图见 `docs/model-square.png`。
 
 ---
 
