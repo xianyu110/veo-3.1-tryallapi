@@ -1,0 +1,5 @@
+title: "Google Veo 3.1 API 调用教程（TryAllAPI）"
+description: "How to call Google Veo 3.1 via TryAllAPI — async video generation API tutorial. 模型广场选型、价格表、POST /v1/videos。"
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-seo-tag
